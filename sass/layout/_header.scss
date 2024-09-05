@@ -1,0 +1,149 @@
+.header {
+    background-color: #000;
+    grid-column: full-start / full-end;
+}
+
+/* Navbar container */
+/* Initial state of the navbar (transparent background) */
+nav {
+    background-color: transparent;
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, padding 0.3s ease; /* Smooth transition */
+    box-shadow: none; 
+}
+
+/* When the navbar is scrolled (solid background) */
+nav.scrolled {
+    background-color: $color-secondary; /* Your background color */
+    box-shadow: 0 0 1rem #000;
+}
+
+/* Nav container */
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Brand logo */
+.nav-logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    img {
+        height: 5rem;
+        width: 100%;
+    }
+}
+
+
+
+/* Main navigation styles */
+ul.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+ul.nav-menu li {
+    margin-left: 20px;
+}
+
+ul.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+ul.nav-menu li a:hover {
+    background-color: $color-primary;
+}
+
+/* Dropdown menu */
+ul.nav-menu li .dropdown {
+    position: relative;
+}
+
+ul.nav-menu li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 160px;
+    z-index: 1;
+    top: 100%;
+}
+
+ul.nav-menu li .dropdown-content a {
+    color: white;
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+}
+
+ul.nav-menu li .dropdown-content a:hover {
+    background-color: #666;
+}
+
+ul.nav-menu li:hover .dropdown-content {
+    display: block;
+}
+
+.nav-menu {
+
+    display: flex;
+    align-items: center;
+
+    button {
+        i {
+            padding: 0 1rem 0 0;
+        }
+    }
+}
+
+/* Mobile Menu (hidden by default) */
+.mobile-menu-icon {
+    display: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+    ul.nav-menu {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        padding: 1rem 0;
+    }
+
+    ul.nav-menu.active {
+        display: flex;
+        }
+
+    ul.nav-menu li {
+        margin: 0 auto;
+        text-align: center;
+        padding: .5rem 0;
+        width: 100%;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+}

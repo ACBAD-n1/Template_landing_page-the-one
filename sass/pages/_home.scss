@@ -1,0 +1,390 @@
+.hero {
+    grid-column: full-start / full-end;
+    background-color: $color-secondary;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &__content {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 0 3.5rem;
+        color: #fff;
+        z-index: 10;
+        text-shadow: 0 0 2rem #000;
+
+        span {
+            font-size: 1.2rem;
+        }
+
+        h1 {
+            font-family: "Karantina", system-ui;
+            font-size: 3rem;
+        }
+
+        p {
+            color: $text-color;
+            text-shadow: 0 0 1rem #000;
+        };
+    }
+
+    &__image {
+       
+        img {
+
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 60%;
+            left: 63.5%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+@media (max-width: 1022px) {
+
+    .hero {
+    
+        &__content {
+        }
+    
+        &__image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+            img {
+                position: absolute;
+                width: 100%;
+                height: auto;
+                top: 50%;
+                left: 65%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+               
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        display: flex;
+
+    
+        &__content {
+            justify-content: center;
+        }
+    
+        &__image {
+           
+            img {
+                display: none;
+            }
+        }
+    }
+               
+}
+
+
+
+.benefits {
+    grid-column: full-start / full-end;
+    background-color: #353535;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: auto auto; /* Two rows: One for title, one for content */
+    align-items: stretch; /* Ensure both columns stretch to the same height */
+    padding: 2rem 5rem;
+    gap: 2rem; /* Adjust this to create space between the elements */
+    color: #fff;
+
+    h2 {
+        grid-column: 1 / -1;
+        text-align: start;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        color: $text-color;
+        font-size: .9rem;
+    }
+
+    &__list-1 {
+        grid-column: 1 / 2;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-self: stretch; /* Keep aligned to the start */
+        border-left: .2rem solid #fff;
+        padding: 0 0 0 1rem;
+    }
+
+    &__image {
+        grid-column: 2 / 3;
+        display: flex;
+        justify-content: flex-start; /* Align image to the start of the column */
+        align-items: center; /* Center image between the two lists */
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+
+    &__list-2 {
+        grid-column: 3 / 4;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-self: stretch; /* Allow full height */
+        border-right: .2rem solid #fff;
+        padding: 0 1rem 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .benefits {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding: 5rem 5rem;
+    
+        &__list-1 {
+            grid-column: 1 / -1;
+        }
+    
+        &__image {
+            grid-column: 1 / -1;
+        }
+    
+        &__list-2 {
+            grid-column: 1 / -1;
+        }
+    }
+               
+}
+
+.demo {
+    grid-column: full-start / full-end;
+    background-color: $color-secondary;
+    padding: 2rem 5rem 2rem 0;
+    color: #fff;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    p {
+        color: $text-color;
+
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    &__image {
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    &__content {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 0 2rem;
+    }
+    
+}
+
+@media (max-width: 768px) {
+
+    .demo {
+        grid-template-columns: 1fr;
+    
+        &__content {
+            padding: 0 4rem 3rem 4rem;
+        }
+        
+    }
+               
+}
+
+.testimonials {
+    grid-column: full-start / full-end;
+    background-color: #353535;
+    padding: 7.5rem 5rem;
+    color: #fff;
+
+    h2 {
+        font-size: 2rem;
+        padding: 0 0 2rem 0;
+    }
+
+    p {
+        color: $text-color;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 5rem;
+        padding: 0 5rem;
+
+        &-card {
+            background-color: $color-secondary;
+            padding: 1rem 2rem;
+            border-radius: 2rem 2rem 2rem 2rem;
+            box-shadow: 0 0 1rem #00000065;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            cursor: pointer;
+
+            transition: all .3s;
+
+            &--quote {
+                i {
+                font-size: 5rem;
+                color: $color-primary;
+                }
+            }
+
+            &--stars {
+                color: $color-primary;
+            }
+        }
+
+        &-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 1rem $color-primary;
+        }
+
+    }
+    
+}
+
+@media (max-width: 1022px) {
+
+    .testimonials {
+    
+        &__content {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust columns responsively */
+            row-gap: 2rem;
+            padding: 0;
+    
+            &-card {
+                box-shadow: 0 0 1rem #00000065;
+            }
+        }
+        
+    }
+               
+}
+
+@media (max-width: 768px) {
+
+    .testimonials {
+    
+        &__content {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust columns responsively */
+            row-gap: 2rem;
+            padding: 0;
+    
+            &-card {
+                box-shadow: 0 0 1rem #00000065;
+            }
+        }
+        
+    }
+               
+}
+
+
+.cta {
+    grid-column: full-start / full-end;
+    background-color: $color-secondary;
+    height: 100%;
+    color: #fff;
+
+    &__content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+
+        &-image {
+            grid-column: 1 / 2;
+           
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+
+        }
+
+        &-text {
+            grid-column: 2 / 3;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+            padding: 0 4rem;
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                color: $text-color;
+            }
+        }
+
+    }
+
+    
+}
+
+@media (max-width: 768px) {
+
+    .cta {
+    
+        &__content {
+            display: grid;
+            grid-template-columns: 1fr;
+    
+            &-text {
+                order: 1; /* Text comes first */
+                padding: 7rem 5rem;
+            }
+
+            &-image {
+                grid-column: 1 / -1;    
+                order: 2; /* Image comes second */
+            }
+    
+            &-text {
+                grid-column: 1 / -1;
+            }
+    
+        }    
+    }
+               
+}
+

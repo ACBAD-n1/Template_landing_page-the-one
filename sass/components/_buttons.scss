@@ -1,0 +1,16 @@
+.btn__black {
+    border: none;
+    background-color: $color-primary;
+    padding: .5rem 2rem;
+    color: #fff;
+    border-radius: 5rem 5rem 5rem 5rem;
+    cursor: pointer;
+
+    transition: all .3s;
+}
+
+.btn__black:hover {
+    color: $color-primary;
+    background-color: $color-secondary;
+    box-shadow: 0 0 .2rem $color-primary;
+}
